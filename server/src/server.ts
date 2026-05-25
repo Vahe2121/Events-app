@@ -4,7 +4,15 @@ import cors from '@fastify/cors'
 import {validateEnv, env} from "../config/env";
 import {AppDataSource} from "./db/data-source";
 
-const app = fastify({logger: true})
+const app = fastify({ logger: true })
+
+app.decorate('authenticate', async function authenticate(request, reply) {
+    try {
+        await request.jwtVerify()
+    } catch (err) {
+        reply.code(401).send({ message: "Unauthorized" })
+    }
+})
 
 const start = async () => {
     try {
@@ -17,7 +25,7 @@ const start = async () => {
         })
 
         await app.register(fastifyJwt, {
-            secret : env.jwtSecret,
+            secret: env.jwtSecret,
         })
 
         await AppDataSource.initialize()
