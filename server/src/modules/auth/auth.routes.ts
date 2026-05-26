@@ -90,7 +90,7 @@ export const authRoutes: FastifyPluginAsync = async (app) => {
             return reply.code(401).send({ message: "Unknown login or password"})
         }
 
-        const token = reply.jwtSign({ sub: user.id, email: user.email })
+        const token = await reply.jwtSign({ sub: user.id, email: user.email })
 
         return reply.send({
             token,
