@@ -3,6 +3,7 @@ import fastifyJwt from "@fastify/jwt"
 import cors from '@fastify/cors'
 import {validateEnv, env} from "../config/env";
 import {AppDataSource} from "./db/data-source";
+import {authRoutes} from "./modules/auth/auth.routes";
 
 const app = fastify({ logger: true })
 
@@ -26,6 +27,10 @@ const start = async () => {
 
         await app.register(fastifyJwt, {
             secret: env.jwtSecret,
+        })
+
+        await app.register(authRoutes, {
+            prefix: '/auth',
         })
 
         await AppDataSource.initialize()

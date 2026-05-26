@@ -47,6 +47,23 @@ export const authRoutes: FastifyPluginAsync = async (app) => {
         })
     })
 
+    app.get('/me', { preHandler : [app.authenticate] }, async (request, reply) => {
+        const userId = request.user.sub
+        const user = await userRepository.findOne({ where: { id: userId } })
+
+        if (!user) {
+            return reply.code(404).send({ message: "User is not found" })
+        }
+
+        return reply.send({
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            createdAt: user.createdAt,
+            updatedAtt: user.updatedAt
+        })
+    })
+
     app.post('/login', async (request, reply) => {
         const parseBody = loginSchema.safeParse(request.body);
 
