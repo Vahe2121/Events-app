@@ -1,4 +1,4 @@
-import {Column, Entity, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, JoinColumn, Index, ManyToOne, PrimaryGeneratedColumn, CreateDateColumn} from "typeorm";
 import {Event} from "./event.entity";
 import {User} from "./user.entity";
 
@@ -22,7 +22,7 @@ export class EventParticipant {
     @Column({type: "uuid"})
     userId!: string;
 
-    @Column({type: "timestamptz"})
+    @CreateDateColumn({type: "timestamptz"})
     joinedAt!: Date;
 
 }

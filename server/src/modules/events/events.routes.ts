@@ -119,13 +119,85 @@ export const eventsRoutes: FastifyPluginAsync = async (app) => {
             })
         }
 
-        if (event.id !== request.params.id) {
+        if (event.ownerId !== request.user.sub) {
             return reply.code(403).send({
                 message: 'Only owner can delete this event'
             })
         }
 
         await eventRepository.delete({ id : event.id})
+        return reply.code(204).send()
+    })
+
+    app.post<{ Params: EventParams }>('/:id/join', {preHandler: [app.authenticate]}, async (request, reply) => {
+        const event = await eventRepository.findOne({where: {id: request.params.id}})
+
+        if (!event) {
+            return reply.code(404).send({
+                message: "Event is not found"
+            })
+        }
+
+        if (event.ownerId === request.user.sub) {
+            return reply.code(403).send({
+                message: "Can't join in own event"
+            })
+        }
+
+        const existingParticipation = await participantRepository.findOne({
+            where: { eventId: event.id, userId: request.user.sub }
+        })
+        if (existingParticipation) {
+            return reply.code(409).send({
+                message: "You already join in event"
+            })
+        }
+
+        const participationCount = await participantRepository.count({
+            where: {
+                eventId: event.id
+            }
+        })
+
+        if (participationCount >= event.capacity) {
+            return reply.code(409).send({
+                message: "No available spots"
+            })
+        }
+        const participation = participantRepository.create({
+            eventId: event.id,
+            userId : request.user.sub,
+            // joinedAt: new Date()
+        })
+
+        const savedParticipation = await participantRepository.save(participation)
+
+        return reply.code(201).send({
+            message: "you joined the event",
+            participation: savedParticipation
+        })
+    })
+
+    app.delete<{ Params: EventParams }>('/:id/join', {preHandler: [app.authenticate]}, async (request, reply) => {
+        const event = await eventRepository.findOne({where: {id: request.params.id}})
+
+        if (!event) {
+            return reply.code(404).send({
+                message: "Event is not found"
+            })
+        }
+
+        const existingParticipation = await participantRepository.findOne({
+            where: { eventId: event.id, userId: request.user.sub }
+        })
+        if (!existingParticipation) {
+            return reply.code(409).send({
+                message: "You already join in event"
+            })
+        }
+
+        await participantRepository.delete({ id: existingParticipation.id })
+
         return reply.code(204).send()
     })
 }
