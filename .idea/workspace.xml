@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad788592-1d56-4ac7-81c6-efec3be427e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/db/migrations/1780134411816-InitSchema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/modules/me/me.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/app-router-provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/router.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/router/root-redirect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/router/root.layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/shared/api/auth-token.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/shared/api/auth.api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/shared/api/http.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/shared/api/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/db/entities/event-participant.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/db/entities/event-participant.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/modules/events/events.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/modules/events/events.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +90,8 @@
       <workItem from="1779693697712" duration="4416000" />
       <workItem from="1779778774904" duration="10387000" />
       <workItem from="1780126499488" duration="11872000" />
-      <workItem from="1780473273906" duration="2641000" />
+      <workItem from="1780473273906" duration="8258000" />
+      <workItem from="1780564683995" duration="1530000" />
     </task>
     <servers />
   </component>
