@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad788592-1d56-4ac7-81c6-efec3be427e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/stores/auth-stores.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/auth-bootstrap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/router/guest-router.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/router/protected-layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/router/protected-router.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/hooks/use-auth-bootstrap.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/components/auth-form-error-alert.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/components/auth-screen-layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/components/auth.form.card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/components/register-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/auth/register/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/shared/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shared/api/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/router/root-redirect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/router/root-redirect.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -85,7 +97,8 @@
       <workItem from="1780126499488" duration="11872000" />
       <workItem from="1780473273906" duration="8258000" />
       <workItem from="1780564683995" duration="3966000" />
-      <workItem from="1781075390739" duration="5097000" />
+      <workItem from="1781075390739" duration="16779000" />
+      <workItem from="1781170889920" duration="2072000" />
     </task>
     <servers />
   </component>
